@@ -1,4 +1,4 @@
-import { useAppSelector, userDataSelect } from "../redux/store"
+import { useAppSelector, userDataSelect } from "../../redux/selectors"
 
 const Navbar = () => {
     const userData = useAppSelector(userDataSelect)    

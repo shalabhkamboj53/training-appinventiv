@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux"
-import { addTodo } from "../redux/slices/todoSlice"
-import { todosSelect, useAppDispatch } from "../redux/store"
+import { addTodo } from "../../redux/slices/todoSlice"
 import { useRef } from "react"
+import { todosSelect, useAppDispatch } from "../../redux/selectors"
 
 const TodoInput = () => {
     const dispatch = useAppDispatch()

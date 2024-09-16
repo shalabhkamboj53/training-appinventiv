@@ -1,5 +1,5 @@
-import { deleteTodo, updateTodo } from "../redux/slices/todoSlice"
-import { todosSelect, useAppDispatch, useAppSelector } from "../redux/store"
+import { todosSelect, useAppDispatch, useAppSelector } from "../../redux/selectors"
+import { deleteTodo, updateTodo } from "../../redux/slices/todoSlice"
 
 const TodoGrid = () => {
 
