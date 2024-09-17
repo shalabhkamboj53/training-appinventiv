@@ -49,8 +49,8 @@ const Login = () => {
             <div>
                 <h2 className="mb-5 text-center text-3xl font-bold">Login</h2>
                 <div className="border-[1px] border-white border-opacity-20 p-10 rounded-md text-center">
-                    <input type="text" className="input input-bordered w-full mb-5" placeholder="Username" ref={usernameRef} />
-                    <input type="password" className="input input-bordered w-full mb-5" placeholder="Password" ref={passwordRef} />
+                    <input type="text" defaultValue={'emilys'} className="input input-bordered w-full mb-5" placeholder="Username" ref={usernameRef} />
+                    <input type="password" defaultValue={'emilyspass'} className="input input-bordered w-full mb-5" placeholder="Password" ref={passwordRef} />
                     <button className="btn btn-ghost w-full" onClick={LoginHandler}>Login</button>
                 </div>
             </div>
