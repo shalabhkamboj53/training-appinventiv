@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { useNavigate } from "react-router-dom";
+import { axiosAuthCheck } from "../../../utils/api/index";
 
 const Login = () => {
     const usernameRef = useRef<HTMLInputElement | null>(null)
@@ -12,34 +13,22 @@ const Login = () => {
             navigate('/')
         }
         setIsMounted(true)
-    }, [])
+    }, [navigate])
 
-    const LoginHandler = () => {
-        let temp = {
+    const LoginHandler = async () => {
+        const temp = {
             "username": usernameRef.current?.value,
             "password": passwordRef.current?.value
         }
 
-        fetch('https://dummyjson.com/auth/login', {
-            method: 'POST',
-            headers: { 
-                'Content-Type': 'application/json' 
-            },
-            body: JSON.stringify(temp)
-        })
-            .then(res => res.json())
-            .then((res) => {
-                if(res?.username === temp.username && res?.token) {
-                    localStorage.setItem('isLogin', JSON.stringify({...res, status: true}))
-                    navigate('/dashboard')
-                } else {
-                    alert('invalid cred.')
-                }
-            })
-            .catch((error)=>{
-                alert(error)
-            })
-
+        const axiosData = await axiosAuthCheck({ temp })
+  
+        if(axiosData?.username === temp.username && axiosData?.accessToken) {
+            localStorage.setItem('isLogin', JSON.stringify({...axiosData, status: true}))
+            navigate('/dashboard')
+        } else {
+            alert('invalid cred.')
+        }
 
     }
 
