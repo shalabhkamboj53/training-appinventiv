@@ -2,14 +2,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Home from "../module/home"
 import PrivateRoute from "./privateRoute"
 import PublicRoute from "./publicRoute"
+import { RouteArr } from "../utils/types"
 
 const RouterMap = () => {
-    const routes : {
-        name: string,
-        path: string,
-        component: React.FC,
-        isPrivate: boolean
-    }[] = [
+    const routes : RouteArr[] = [
         {
             name: 'Home',
             path: '/',

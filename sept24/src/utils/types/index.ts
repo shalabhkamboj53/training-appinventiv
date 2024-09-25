@@ -34,3 +34,10 @@ export type CartContextType = {
     Cart: CartProduct;
     setCart: setState;
 }
+
+export type RouteArr = {
+    name: string,
+    path: string,
+    component: React.FC,
+    isPrivate: boolean
+}
