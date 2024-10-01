@@ -1,0 +1,31 @@
+.react-multiple-carousel__arrow  {
+    bottom: 180px;
+    display: none;
+    transition: display 2s;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.259) 0px 0px 5px;
+}
+
+.react-multiple-carousel__arrow::before {
+    color: #000;
+}
+
+.react-multiple-carousel__arrow:hover::before {
+    color: #fff;
+}
+
+.react-multiple-carousel__arrow:hover {
+    background: #4ca886;
+}
+
+.react-multiple-carousel__arrow--left {
+    left: 5px;
+}
+
+.react-multiple-carousel__arrow--right {
+    right: 5px;
+}
+
+.product_listing_carousel_container:hover .react-multiple-carousel__arrow {
+    display: block;
+}

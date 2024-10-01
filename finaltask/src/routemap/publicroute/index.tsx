@@ -1,7 +1,7 @@
 import Navbar from "../../components/navbar"
-import { RouteProps } from "../../utils/type"
+import { ReactNodeChildren } from "../../utils/type"
 
-const PublicRoute = ({children}:RouteProps) => {
+const PublicRoute = ({children}:ReactNodeChildren) => {
   return (
     <>
         <Navbar />

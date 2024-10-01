@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { RouteType } from "../utils/type"
 import Home from "../module/home"
-import ContactUs from "../module/contactUs"
 import PrivateRoute from "./privateroute"
 import PublicRoute from "./publicroute"
+import ContactUs from "../module/contactUs"
 
 
 const RouteMap = () => {
@@ -15,7 +15,7 @@ const RouteMap = () => {
             "component": Home
         },
         {
-            "path": "/contact",
+            "path": "/contact-us",
             "isExact": true,
             "isPrivate": false,
             "component": ContactUs

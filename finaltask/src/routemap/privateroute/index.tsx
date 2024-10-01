@@ -1,7 +1,6 @@
-import { RouteProps } from "../../utils/type"
+import { ReactNodeChildren } from "../../utils/type"
 
-
-const PrivateRoute = ({children}:RouteProps) => {
+const PrivateRoute = ({children}:ReactNodeChildren) => {
     const isAuth = true
     if(isAuth){
         return (

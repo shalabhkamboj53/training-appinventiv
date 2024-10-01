@@ -1,29 +1,47 @@
-import Cta from "../../components/sections/cta"
-import Footer from "../../components/footer"
-import HeroSection from "../../components/sections/hero-section"
-import ProductDisplay from "../../components/sections/productdisplay"
-import ProductListing from "../../components/sections/productlisting"
-import ShopSpace from "../../components/sections/shopspace"
-import Testimonials from "../../components/sections/testimonials"
-import AsSeen from "../../components/sections/asseen"
-import Guide from "../../components/sections/guide"
-import BuyProduct from "../../components/sections/buyproduct"
+import { HomeContext } from "../../context/homecontext";
+import AsSeen from "./components/asseen";
+import Cta from "./components/cta";
+import Footer from "./components/footer";
+import Guide from "./components/guide";
+import HeroSection from "./components/hero-section";
+import ProductListing from "./components/productlisting";
+import ShopSpace from "./components/shopspace";
+import Testimonials from "./components/testimonials";
+import { TestimonialData, ProductList, AsSeenList, FooterData } from "../../utils/mock";
+import FeatureProducts from "./components/featureproducts";
+import ExclusiveProduct from "./components/exclusiveproduct";
+import { useState } from "react";
+import { ProductFeatureType, ProductType } from "../../utils/type";
 
 const Home = () => {
-  return (
-    <div>
-        <HeroSection />
-        <Testimonials />
-        <ProductDisplay />
-        <ShopSpace />
-        <Cta />
-        <ProductListing />
-        <BuyProduct />
-        <Guide />
-        <AsSeen />
-        <Footer />
-    </div>
-  )
-}
+  const [ExclusiveProductFeature, setExclusiveProductFeature] = useState<ProductFeatureType|null>(null);
+  const [ExclusiveProductItem, setExclusiveProductItem] = useState<ProductType|null>(null);
 
-export default Home
+  const value = {
+    TestimonialData,
+    ProductList,
+    ExcusiveProductFeature: ExclusiveProductFeature,
+    setExclusiveProductFeature,
+    ExclusiveProductItem,
+    setExclusiveProductItem,
+    AsSeenList,
+    FooterData
+  };
+
+  return (
+    <HomeContext.Provider value={value}>
+      <HeroSection />
+      <Testimonials />
+      <FeatureProducts />
+      <ShopSpace />
+      <Cta />
+      <ProductListing />
+      <ExclusiveProduct />
+      <Guide />
+      <AsSeen />
+      <Footer />
+    </HomeContext.Provider>
+  );
+};
+
+export default Home;
